@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>달력만들기</title>
+	<style>
+		#wrapper{
+			width:714px;
+			height:692px;
+			border:1px solid black;
+			margin:auto;
+		}
+		#up{
+			width:100%;
+			height:35px;
+			background:#00ff00;
+		}
+		#dayTitle{
+			width:100%;
+			height:30px;
+			background:#33ffcc;
+		}
+		ul{
+			list-style:none;
+			width:100%;
+		}
+		ul li{
+			float:left;
+			width:100px;
+		}
+	</style>
+	<script src="../lib/DateBox.js"></script>
+	<script>
+		var down;
+		var sel_yy;
+		var sel_mm;
+		var sel_dd;
+
+		window.addEventListener("load", function(){
+			init();
+		});	
+
+		function init(){
+			down=document.getElementById("down");
+			sel_yy=document.getElementById("sel_yy");
+			sel_mm=document.getElementById("sel_mm");
+			sel_dd=document.getElementById("sel_dd");
+
+			for(var i=1990;i<=2030;i++){
+				var op=document.createElement("option");
+				op.text=i;
+				sel_yy.add(op);
+			}
+			for(var i=1;i<=12;i++){
+				var op=document.createElement("option");
+				op.text=i;
+				sel_mm.add(op);
+			}
+			for(var i=1;i<=30;i++){
+				var op=document.createElement("option");
+				op.text=i;
+				sel_dd.add(op);
+			}
+
+			//최대 42개의 날짜 박스를 생성한다!!
+			for(var i=1;i<=42;i++){
+				var box = new DateBox(down, 100,100,i);
+				box.init();
+			}
+		}
+		
+		
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="up">
+			<select id="sel_yy"></select>년도
+			<select id="sel_mm"></select>월
+			<select id="sel_dd"></select>일
+			<input type="button" value="검색"> 
+		</div>
+		<div id="dayTitle">
+			<ul>
+				<li>월</li>
+				<li>화</li>
+				<li>수</li>
+				<li>목</li>
+				<li>금</li>
+				<li>토</li>
+				<li>일</li>
+			</ul>
+		</div>
+		<div id="down"></div>
+	</div>
+</body>
+</html>

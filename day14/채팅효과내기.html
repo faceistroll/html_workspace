@@ -4,14 +4,18 @@
 	<meta charset="UTF-8">
 	<title>채팅효과내기</title>
 	<script>
+		//새롭게 태어난 팝업창들이 접근할수 있도록...
+		var chatA;
+		var chatB;
+
 		function openClient(){
 			//채팅을 할 두 클라이언트 창 띄우기!!
 			//ChatA 대한 설정
 			var spect1="width=300px, height=400px, left=100px, top=200px";
-			window.open("ChatA.html","pop1",spect1);
+			chatA=window.open("ChatA.html","pop1",spect1);
 
 			var spect2="width=300px, height=400px, left=500px, top=200px";
-			window.open("ChatB.html","pop2",spect2);
+			chatB=window.open("ChatB.html","pop2",spect2);
 		}
 	</script>
 </head>
