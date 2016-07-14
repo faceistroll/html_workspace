@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>라이트효과연습_1</title>
+	<script>
+		var bg=["black","blue","navy","purple","yellow","green","orange"];
+
+		function setBg(){
+			var r=Math.random();
+			var n=parseInt(r*bg.length);
+			document.body.style.background=bg[n];
+			setTimeout("setBg()",100);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="시작" onClick="setBg()">
+</body>
+</html>

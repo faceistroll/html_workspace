@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>식사시간메뉴선택연습_1</title>
+	<script>
+		var menu=["햄버거","치킨","국밥","파스타","피자","족발","막국수","냉면"];
+		var r=Math.random;
+		var n=parsuInt(r*menu.length);
+		document.write(n);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>전자시계</title>
+	<style>
+		#txt{
+			width:150px;
+			height:150px;
+			font-weight:bold;
+			font-size:100px;
+			color:gray;
+			background:black;
+			text-align:right; /*내용물에 대한 우측정렬*/
+			}
+			#txt1{
+			width:150px;
+			height:150px;
+			font-weight:bold;
+			font-size:100px;
+			color:gray;
+			background:black;
+			text-align:right; /*내용물에 대한 우측정렬*/
+			}
+			#txt2{
+			width:150px;
+			height:150px;
+			font-weight:bold;
+			font-size:100px;
+			color:gray;
+			background:black;
+			text-align:right; /*내용물에 대한 우측정렬*/
+			}
+	</style>
+	<script>
+	var ss=0;// 초를 담는 전역변수!!
+	var mm=0;
+	var hh=0;
+	var st;
+	//문서가 모두읽혀졌으므로, 아래의 txt요소를접근할수 있는시점
+		function init(){
+			document.getElementById("txt").value=ss;
+			document.getElementById("txt1").value=mm;
+			document.getElementById("txt2").value=hh;
+
+		}
+		//txt의 기존값을 증가값으로 대입
+		function start(){
+				console.log(ss);
+				document.getElementById("txt").value=ss;
+				st=setTimeout("start(),1000");
+			//버튼을못누르게 비활성화시키기
+			document.getElementById("bt_start").disabled=true;
+		}
+		function stop(){
+			clearTimeout(st); //기존 셋타임 아웃에 의한 자동호출을 중지!
+			//비활성화 할래?? 아니요 -->활성화
+			document.getElementById("bt_start").disabled=false;
+		}
+	</script>
+</head>
+<body onLoad="init()">
+	<input type="text" id="txt2">
+	<input type="text" id="txt1">
+	<input type="text" id="txt">
+	<input type="button" id="bt_start" value="시작" onClick="start()">
+	<input type="button" id="bt_stop" value="정지" onClick="stop()">
+</body>
+</html>

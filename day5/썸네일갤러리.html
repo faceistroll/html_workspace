@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>썸네일갤러리</title>
+	<style>
+		div{
+			border:2px solid black;
+			width:600px;
+			height:600px;
+			margin:auto;
+		}
+	</style>
+	<script>
+		function setMg(c){
+			document.getElementById("pic").src="../images/"+c+".jpg";
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<table width="100%">
+			<tr>
+				<td><img src="../images/1.jpg" width="50px" height="50px" onMouseOver="setMg(1)" ></td>
+				<td><img src="../images/2.jpg" width="50px" height="50px" onMouseOver="setMg(2)" ></td>
+				<td><img src="../images/3.jpg" width="50px" height="50px" onMouseOver="setMg(3)" ></td>
+				<td><img src="../images/4.jpg" width="50px" height="50px" onMouseOver="setMg(4)" ></td>
+				<td><img src="../images/5.jpg" width="50px" height="50px" onMouseOver="setMg(5)" ></td>
+				<td><img src="../images/6.jpg" width="50px" height="50px" onMouseOver="setMg(6)" ></td>
+				<td><img src="../images/7.jpg" width="50px" height="50px" onMouseOver="setMg(7)" ></td>
+				<td><img src="../images/8.jpg" width="50px" height="50px" onMouseOver="setMg(8)" ></td>
+				<td><img src="../images/9.jpg" width="50px" height="50px" onMouseOver="setMg(9)" ></td>
+				<td><img src="../images/10.jpg" width="50px" height="50px" onMouseOver="setMg(10)"></td>
+			</tr>
+		</table>		
+		<img src="../images/1.jpg" width="100%" id="pic">
+	</div>
+</body>
+</html>

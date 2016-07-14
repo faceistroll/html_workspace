@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>우편번호 검색</title>
+	<script>
+		//새창에서 선택한 현재의 우편번호 텍스트를, 부도 윈도우의
+		//우편번호 입력란에 채워넣는다!! + 주소도 채워 넣는다!!
+		function setPost(zip, addr){
+			var arr=zip.split("-"); //arr[0]="123", arr[1]="456"
+			opener.document.form1.zipcode1.value=arr[0];
+			opener.document.form1.zipcode2.value=arr[1];
+			opener.document.form1.addr1.value=addr;
+			window.close(); //현재창 닫기!!
+			opener.document.form1.addr2.focus();
+		}
+	</script>
+</head>
+<body>
+	<table width="100%" border="1px">
+		<tr>
+			<td colspan="2" align="center">
+				<input type="text">
+				<img src="/images/search_button.png" width="15px">
+			</td>
+		</tr>
+		<tr>
+			<td>우편주소</td>
+			<td>주소</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-456','서울 강남구 신사동 도화빌딩')">123-456</a></td>
+			<td>서울 강남구 신사동 도화빌딩</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-466','서울 강남구 신사동 레화빌딩')">123-466</a></td>
+			<td>서울 강남구 신사동 레화빌딩</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-476','서울 강남구 신사동 미화빌딩')">123-476</a></td>
+			<td>서울 강남구 신사동 미화빌딩</td>
+		</tr> 
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-486','서울 강남구 신사동 파화빌딩')">123-486</a></td>
+			<td>서울 강남구 신사동 파화빌딩</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-496','서울 강남구 신사동 솔화빌딩')">123-496</a></td>
+			<td>서울 강남구 신사동 솔화빌딩</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-506','서울 강남구 신사동 라화빌딩')">123-506</a></td>
+			<td>서울 강남구 신사동 라화빌딩</td>
+		</tr>
+		<tr onMouseOver="this.style.background='#66ffff'" onMouseOut="this.style.background=''">
+			<td><a href="javascript:setPost('123-516','서울 강남구 신사동 시화빌딩')">123-516</a></td>
+			<td>서울 강남구 신사동 시화빌딩</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>배열문제10</title>
+</head>
+<script>
+	var arr=new Array(4);
+	for(x=0;x<arr.length;x++){
+		arr[x]=x;
+		document.write(arr[x]+"<br>")
+	}
+</script>
+<body>
+
+</body>
+</html>

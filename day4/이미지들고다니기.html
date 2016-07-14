@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	//문서가 실행되면 아래의 텍스트박스에 사과 넣기!!
+		function into(){
+		document.getElementById("txt").value="사과"
+		}
+	</script>
+</head>
+<body onLoad="into()">
+<!--	<img src="../images/cat.png" onMouseOver="alert('올렸어?');" onMouseout="alert('나갔어?');" onDblClick="alert('ㅇㅇ?');">
+	<input type="text" onFocus="alert('커서올렷어?');" onBlur="alert('커서가 나갔네');"> -->
+
+	<input type="text" id="txt" onChange="alert('변경했어?');">
+	<select onChange="alert('바꿈?')">
+		<option>네이버</option>
+		<option>구글</option>
+		<option>다음</option>
+	</select>
+</body>
+</html>

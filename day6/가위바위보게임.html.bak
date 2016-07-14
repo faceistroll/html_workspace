@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>가위바위보게임</title>
+	<script>
+		var pic=new Array();   //=["바위.png","가위.png","보.png"];
+		pic[0]="바위.png";
+		pic[1]="가위.png";
+		pic[2]="보.png";
+
+		var r=Math.random();      //난수발생
+		var n=parseInt(r*pic.length);
+		document.write("<img src=\"../images/"+pic[n]+"\">")
+	</script>
+</head>
+<body>
+
+</body>
+</html>

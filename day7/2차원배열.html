@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2차원 배열</title>
+	<script>
+		var fruit=["사과","딸기","바나나","오렌지"];
+		var movie=["워크래프트","정글북","시빌워","곡성"];
+		var car=["페라리","BMW","아우디","벤츠"];
+		var box=new Array();
+
+		//box는 이차원 배열화 되었음!!
+		box[0]=fruit;
+		box[1]=movie;
+		box[2]=car;
+
+
+		//과일명을 출력한다!!
+
+
+		for(var y=0;y<box.length;y++){
+			for(x=0;x<box[y].length;x++){
+				document.write(box[y][x]+"<br>");
+			}
+		}
+		
+
+
+/*		for(x=0;x<box[1].length;x++){
+			document.write(box[1][x]+"<br>");
+		}
+
+		for(x=0;x<box[2].length;x++){
+			document.write(box[2][x]+"<br>");
+		}*/
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

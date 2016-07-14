@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>배열을이용한 갤러리</title>
+	<style>
+		#gallery{
+			width:500px;
+			height:600px;
+			border:2px solid red;
+			margin:auto;
+			}
+		#pic{
+		width:100%;
+		height:550px;
+		}
+		#prev{
+		width:247px;
+		height:48px;
+		background:black;
+		color:orange;
+		font-size:30px;
+		}
+		#next{
+		width:247px;
+		height:48px;
+		background:black;
+		color:orange;
+		font-size:30px;
+		}
+	</style>
+	<script>
+		//배열 선언!!
+		var photo=new Array();
+		var x=0;
+		photo[0]="deathwing.jpg";
+		photo[1]="forstmoun.jpg";
+		photo[2]="hellscrem.jpg";
+		photo[3]="lichking.jpg";
+		photo[4]="lichkingAthus.jpg";
+		photo[5]="warcraftmovieimages-157588.png";
+		photo[6]="cat.png";
+		
+		function next(){
+			if(x<7){
+				x++;
+				console.log(x);
+				document.getElementById("pic").src="../images/"+photo[x];
+			}else{
+				alert("다음사진이 없습니다!");
+			}
+		}
+
+		function prev(){
+			if(x>0){
+				x--;
+				document.getElementById("pic").src="../images/"+photo[x];
+			}else{
+				alert("이전사진이 없습니다!");
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div id="gallery">
+		<img src="../images/deathwing.jpg" id="pic"><br>
+		<input type="button" value="이전" id="prev" onClick="prev()">
+		<input type="button" value="다음" id="next"onClick="next()">
+	</div>
+</body>
+</html>

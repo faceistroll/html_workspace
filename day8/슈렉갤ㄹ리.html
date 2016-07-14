@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>슈렉갤러리</title>
+	<style>
+		body{
+			margin:0px;
+		}
+		#wrapper{
+			width:500px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:200px;
+			text-align:center;
+			font-size:12pt;
+		}
+		#mask{
+			width:500px;
+			height:340px;
+			overflow:hidden;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:200px;
+		}
+		#box{
+			height:340px;
+		}
+		img{
+			margin:0px;
+		}
+		a{
+			text-decoration:none /*밑줄 없애기*/
+		}
+		a:hover{
+			#ff9900;
+		}		
+	</style>
+	<script>
+		var arr=["../images/shurek/img0.jpg",
+		"../images/shurek/img1.jpg",
+		"../images/shurek/img2.jpg",
+		"../images/shurek/img3.jpg",
+		"../images/shurek/img4.jpg",
+		"../images/shurek/img5.jpg",
+		"../images/shurek/img6.jpg"];
+		var box;
+		var a=0.9; //부드러운 정도
+		var targetX=0; //박스가 도달하게될 목표지점
+
+		function init(){
+			box=document.getElementById("box");
+			box.style.width=500*arr.length+"px";
+			
+			for(var x=0;x<arr.length;x++){
+				var img=document.createElement("img");
+				img.src=arr[x];
+				box.appendChild(img);
+			}
+			//심장박동 시작하기!!
+			move();
+		}
+
+		function showImg(pos){
+			targetX=-pos*500;
+		}
+
+		function move(){
+			//나의 이미지위치=(타겟 - a*(타겟-나의 이미지위치);
+
+			box.style.left=targetX-a*(targetX-parseFloat(box.style.left))+"px";
+
+			console.log(box.style.left);
+			setTimeout("move()",10);
+		}
+	</script>
+</head>
+<body onLoad="init()">
+	<div id="wrapper">
+		<div id="mask">
+			<div id="box" style="position:relative; left:0px; top:0px;"></div>
+		</div>
+		<a href="javascript:showImg(0)">●</a>
+		<a href="javascript:showImg(1)">●</a>
+		<a href="javascript:showImg(2)">●</a>
+		<a href="javascript:showImg(3)">●</a>
+		<a href="javascript:showImg(4)">●</a>
+		<a href="javascript:showImg(5)">●</a>
+		<a href="javascript:showImg(6)">●</a>
+	</div>
+</body>
+</html>
